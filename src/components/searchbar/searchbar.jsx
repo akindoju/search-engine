@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { getResult } from '../../redux/result/result.actions';
 import './searchbar.css';
 
 const SearchBar = () => {
   const [searchBarValue, setSearchBarValue] = useState('');
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const searchHandler = (event) => {
     event.preventDefault();
@@ -17,6 +20,7 @@ const SearchBar = () => {
     if (searchBarValue.trim().length === 0) {
       alert(`Please insert keyword`);
     } else {
+      dispatch(getResult(searchBarValue));
       history.push('/result');
     }
     // searchBarValue.trim().length === 0
@@ -26,7 +30,7 @@ const SearchBar = () => {
 
   return (
     <div className="searchContainer">
-      <h2>Quick Search</h2>
+      <h2>Animal Search</h2>
       <input
         type="text"
         className="input"
