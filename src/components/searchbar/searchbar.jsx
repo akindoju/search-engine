@@ -26,6 +26,7 @@ const SearchBar = () => {
 
   return (
     <div className="searchContainer">
+      <h2>Quick Search</h2>
       <input
         type="text"
         className="input"

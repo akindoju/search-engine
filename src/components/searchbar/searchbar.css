@@ -8,6 +8,11 @@ body {
   margin: 0;
 }
 
+h2 {
+  margin-bottom: 5px;
+  font-size: 25px;
+}
+
 .input {
   border: 2px solid #a6c1d3;
   border-radius: 4px;
