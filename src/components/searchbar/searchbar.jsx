@@ -12,7 +12,6 @@ const SearchBar = () => {
   const searchHandler = (event) => {
     event.preventDefault();
     setSearchBarValue(event.target.value);
-    console.log(searchBarValue.length);
   };
 
   const btnClickHandler = (event) => {

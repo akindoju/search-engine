@@ -4,6 +4,7 @@ import resultTypes from './result.types';
 const INITIAL_STATE = {
   result: [],
   resultData: resultData,
+  errorMessage: `Nothing found, please try again`,
 };
 
 const resultReducer = (state = INITIAL_STATE, action) => {
@@ -17,6 +18,9 @@ const resultReducer = (state = INITIAL_STATE, action) => {
         ...state,
         result: filteredData,
       };
+    case resultTypes.NO_RESULT:
+      return { ...state, errorMessage: action.payload };
+
     default:
       return state;
   }
